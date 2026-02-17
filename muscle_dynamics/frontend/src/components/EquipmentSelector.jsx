@@ -1,25 +1,24 @@
 import React from 'react';
-import { 
-  Dumbbell, 
-  Barbell, 
-  Weight, 
-  Home, 
-  Zap, 
-  Check,
-  Settings,
-  Award,
-  Cpu
-} from 'lucide-react';
+import {
+  DumbbellIcon,
+  CheckIcon,
+  TargetIcon,
+  UsersIcon,
+  SparklesIcon,
+  TrophyIcon,
+  ListIcon,
+  FlameIcon
+} from '../utils/icons';
 
 const equipmentData = [
-  { id: 'barbell', name: 'Barbell', icon: <Barbell className="w-6 h-6" />, color: 'from-red-500 to-orange-500' },
-  { id: 'dumbbell', name: 'Dumbbells', icon: <Dumbbell className="w-6 h-6" />, color: 'from-blue-500 to-cyan-500' },
-  { id: 'kettlebell', name: 'Kettlebell', icon: <Weight className="w-6 h-6" />, color: 'from-green-500 to-emerald-500' },
-  { id: 'body only', name: 'Bodyweight', icon: <Home className="w-6 h-6" />, color: 'from-purple-500 to-pink-500' },
-  { id: 'cable', name: 'Cable Machine', icon: <Settings className="w-6 h-6" />, color: 'from-yellow-500 to-amber-500' },
-  { id: 'machine', name: 'Machines', icon: <Cpu className="w-6 h-6" />, color: 'from-indigo-500 to-purple-500' },
-  { id: 'bands', name: 'Resistance Bands', icon: <Zap className="w-6 h-6" />, color: 'from-teal-500 to-green-500' },
-  { id: 'ez curl bar', name: 'EZ Curl Bar', icon: <Award className="w-6 h-6" />, color: 'from-rose-500 to-pink-500' },
+  { id: 'barbell', name: 'Barbell', icon: <DumbbellIcon className="w-6 h-6" />, color: 'from-red-500 to-orange-500' },
+  { id: 'dumbbell', name: 'Dumbbells', icon: <DumbbellIcon className="w-6 h-6" />, color: 'from-blue-500 to-cyan-500' },
+  { id: 'kettlebell', name: 'Kettlebell', icon: <TrophyIcon className="w-6 h-6" />, color: 'from-green-500 to-emerald-500' },
+  { id: 'body only', name: 'Bodyweight', icon: <UsersIcon className="w-6 h-6" />, color: 'from-purple-500 to-pink-500' },
+  { id: 'cable', name: 'Cable Machine', icon: <ListIcon className="w-6 h-6" />, color: 'from-yellow-500 to-amber-500' },
+  { id: 'machine', name: 'Machines', icon: <SparklesIcon className="w-6 h-6" />, color: 'from-indigo-500 to-purple-500' },
+  { id: 'bands', name: 'Resistance Bands', icon: <FlameIcon className="w-6 h-6" />, color: 'from-teal-500 to-green-500' },
+  { id: 'ez curl bar', name: 'EZ Curl Bar', icon: <TargetIcon className="w-6 h-6" />, color: 'from-rose-500 to-pink-500' },
 ];
 
 function EquipmentSelector({ selectedEquipment, onSelect }) {
@@ -27,7 +26,6 @@ function EquipmentSelector({ selectedEquipment, onSelect }) {
     const newSelection = selectedEquipment.includes(equipmentId)
       ? selectedEquipment.filter(id => id !== equipmentId)
       : [...selectedEquipment, equipmentId];
-    
     onSelect(newSelection);
   };
 
@@ -57,7 +55,7 @@ function EquipmentSelector({ selectedEquipment, onSelect }) {
             >
               {isSelected && (
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center">
-                  <Check className="w-4 h-4 text-white" />
+                  <CheckIcon className="w-4 h-4 text-white" />
                 </div>
               )}
               
