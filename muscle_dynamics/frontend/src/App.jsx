@@ -3,6 +3,7 @@ import EquipmentSelector from './components/EquipmentSelector';
 import MuscleSelector from './components/MuscleSelector';
 import ExerciseList from './components/ExerciseList';
 import ExerciseDetailModal from './components/ExerciseDetailModal';
+import DeveloperModal from './components/DeveloperModal';
 import { getExercises } from './services/api';
 import {
   DumbbellIcon,
@@ -18,7 +19,8 @@ import {
   UsersIcon,
   ClockIcon,
   FlameIcon,
-  ListIcon
+  ListIcon,
+  SearchIcon
 } from './utils/icons';
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [selectedExercise, setSelectedExercise] = useState(null);
   const [workoutGenerated, setWorkoutGenerated] = useState(false);
+  const [showDeveloperModal, setShowDeveloperModal] = useState(false);
   const [workoutStats, setWorkoutStats] = useState({
     totalExercises: 0,
     totalSets: 0,
@@ -61,12 +64,12 @@ function App() {
       console.error('Error loading exercises:', error);
       // Fallback data for development
       setExercises([
-        { _id: '1', name: 'Push Ups', equipment: 'body only', primaryMuscles: ['chest'], category: 'strength' },
-        { _id: '2', name: 'Pull Ups', equipment: 'body only', primaryMuscles: ['back'], category: 'strength' },
-        { _id: '3', name: 'Squats', equipment: 'body only', primaryMuscles: ['quadriceps'], category: 'strength' },
-        { _id: '4', name: 'Bench Press', equipment: 'barbell', primaryMuscles: ['chest'], category: 'strength' },
-        { _id: '5', name: 'Deadlift', equipment: 'barbell', primaryMuscles: ['back'], category: 'strength' },
-        { _id: '6', name: 'Bicep Curls', equipment: 'dumbbell', primaryMuscles: ['biceps'], category: 'strength' },
+        { _id: '1', name: 'Push Ups', equipment: 'body only', primaryMuscles: ['chest'], category: 'strength', level: 'beginner' },
+        { _id: '2', name: 'Pull Ups', equipment: 'body only', primaryMuscles: ['back'], category: 'strength', level: 'intermediate' },
+        { _id: '3', name: 'Squats', equipment: 'body only', primaryMuscles: ['quadriceps'], category: 'strength', level: 'beginner' },
+        { _id: '4', name: 'Bench Press', equipment: 'barbell', primaryMuscles: ['chest'], category: 'strength', level: 'intermediate' },
+        { _id: '5', name: 'Deadlift', equipment: 'barbell', primaryMuscles: ['back'], category: 'strength', level: 'expert' },
+        { _id: '6', name: 'Bicep Curls', equipment: 'dumbbell', primaryMuscles: ['biceps'], category: 'strength', level: 'beginner' },
       ]);
     } finally {
       setLoading(false);
@@ -170,16 +173,86 @@ function App() {
               <p className="text-sm text-gray-400">Your AI-Powered Workout Generator</p>
             </div>
           </div>
-          <button
-            onClick={handleReset}
-            className="bg-gray-800 hover:bg-gray-700 text-gray-200 font-medium py-2 px-4 rounded-lg transition border border-gray-700 flex items-center space-x-2"
-          >
-            <SparklesIcon className="w-4 h-4" />
-            <span>New Workout</span>
-          </button>
+          <div className="flex items-center space-x-3">
+            <button
+              onClick={() => setShowDeveloperModal(true)}
+              className="text-gray-300 hover:text-white transition px-3 py-2 rounded-lg hover:bg-gray-800"
+            >
+              About Developer
+            </button>
+            <button
+              onClick={handleReset}
+              className="bg-gray-800 hover:bg-gray-700 text-gray-200 font-medium py-2 px-4 rounded-lg transition border border-gray-700 flex items-center space-x-2"
+            >
+              <SparklesIcon className="w-4 h-4" />
+              <span>New Workout</span>
+            </button>
+          </div>
         </div>
       </header>
 
+      {/* Hero Section - cult.fit inspired */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
+        <div className="container mx-auto px-4 py-20 md:py-28 max-w-6xl relative z-10">
+          <div className="text-center">
+            <span className="inline-block px-4 py-1 bg-red-600/20 text-red-400 rounded-full text-sm font-semibold mb-6 border border-red-600/30">
+              workout worthy
+            </span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-red-500 via-red-400 to-red-500 bg-clip-text text-transparent">
+                Worth Breaking
+              </span>
+              <br />
+              <span className="text-white">a Sweat For</span>
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+              One website for all your fitness needs. From personalized workouts to nutrition guidance,
+              I make group workouts fun and results-driven. #BeBetterEveryDay
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              
+            </div>
+          </div>
+
+          {/* Stats Banner */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-20">
+            {[
+              { label: 'EXERCISES at my DB', value: '1000+' },
+              { label: 'EQUIPMENT', value: '15+' },
+              { label: 'MUSCLE GROUPS', value: '13' },
+              { label: 'included', value: 'tutorial steps' },
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-red-500 mb-2">{stat.value}</div>
+                <div className="text-sm text-gray-400 tracking-wider">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section - One membership for all needs */}
+      <section className="py-20 border-t border-gray-800">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
+                One Membership
+              </span>
+              <br />
+              <span className="text-white">For All Your Fitness Needs</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              At Muscle Dynamics, I make workouts fun, nutrition simple, and results inevitable.
+            </p>
+          </div>
+
+          
+        </div>
+      </section>
+
+      {/* Main Workflow */}
       <main className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Progress Steps */}
         <div className="mb-12">
@@ -323,11 +396,52 @@ function App() {
         />
       )}
 
+      {/* Developer Modal */}
+      {showDeveloperModal && (
+        <DeveloperModal onClose={() => setShowDeveloperModal(false)} />
+      )}
+
       {/* Footer */}
-      <footer className="mt-20 border-t border-gray-800 py-8">
-        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>© {new Date().getFullYear()} Muscle Dynamics. All rights reserved.</p>
-          <p className="mt-1">Powered by AI • 1000+ Exercises • Personalized Workouts</p>
+      <footer className="border-t border-gray-800 py-12">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="p-1 bg-red-600 rounded">
+                  <DumbbellIcon className="w-5 h-5 text-white" />
+                </div>
+                <span className="font-bold text-lg">Muscle Dynamics</span>
+              </div>
+              <p className="text-gray-400 text-sm">Your AI-powered companion for smarter workouts.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#" className="hover:text-white transition">About</a></li>
+                <li><a href="#" className="hover:text-white transition">Features</a></li>
+                <li><a href="#" onClick={() => setShowDeveloperModal(true)} className="hover:text-white transition">Developer</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><a href="#" className="hover:text-white transition">FAQ</a></li>
+                <li><a href="#" className="hover:text-white transition">Contact</a></li>
+                <li><a href="#" className="hover:text-white transition">Privacy</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Connect</h4>
+              <div className="flex space-x-3">
+                <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition">f</a>
+                <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition">i</a>
+                <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition">t</a>
+              </div>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
+            <p>© {new Date().getFullYear()} Muscle Dynamics. All rights reserved. Developed by Pradeep Kumar</p>
+          </div>
         </div>
       </footer>
     </div>
