@@ -14,11 +14,9 @@ import { TrapsGroup } from './muscles/TrapsGroup';
 import { TricepsGroup } from './muscles/TricepsGroup';
 
 const MuscleSvg = ({ selectedMuscles = [], onToggleMuscle }) => {
-  // Helper to generate CSS classes for each muscle group
   const getMuscleClasses = (muscle) => {
     const base = "transition-all duration-200";
     const isSelected = selectedMuscles.includes(muscle);
-    // Hover effect and selection color (adjust to your theme)
     const hover = "hover:fill-red-400 hover:stroke-red-600";
     if (isSelected) {
       return `${base} fill-red-500 stroke-red-700 ${hover}`;
@@ -33,58 +31,19 @@ const MuscleSvg = ({ selectedMuscles = [], onToggleMuscle }) => {
         className="w-full h-auto"
         style={{ maxHeight: '500px' }}
       >
-        <AbdominalsGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <BackGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <BicepsGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <CalvesGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <ChestGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <ForearmsGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <GlutesGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <HamstringsGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <ObliquesGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <QuadricepsGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <ShouldersGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <TrapsGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
-        <TricepsGroup
-          onToggleMuscle={onToggleMuscle}
-          getMuscleClasses={getMuscleClasses}
-        />
+        <AbdominalsGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <BackGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <BicepsGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <CalvesGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <ChestGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <ForearmsGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <GlutesGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <HamstringsGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <ObliquesGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <QuadricepsGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <ShouldersGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <TrapsGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
+        <TricepsGroup onToggleMuscle={onToggleMuscle} getMuscleClasses={getMuscleClasses} />
       </svg>
     </div>
   );
