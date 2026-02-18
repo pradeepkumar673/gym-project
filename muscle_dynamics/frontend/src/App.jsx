@@ -160,7 +160,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
+      <header className=" top-0 z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-gradient-to-br from-primary-600 to-primary-400 rounded-lg">
@@ -549,7 +549,7 @@ function App() {
                 </div>
                 <span className="font-bold text-lg">Muscle Dynamics</span>
               </div>
-              <p className="text-gray-400 text-sm">Your AI-powered companion for smarter workouts.</p>
+              <p className="text-gray-400 text-sm">one fitness website for all the needs.</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
@@ -571,7 +571,7 @@ function App() {
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="flex space-x-3">
                 <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition text-sm">f</a>
-                <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition text-sm">i</a>
+                <a href="https://www.instagram.com/pradeepkumar673atyt/" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition text-sm">i</a>
                 <a href="#" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition text-sm">t</a>
               </div>
             </div>

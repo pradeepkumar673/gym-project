@@ -33,7 +33,7 @@ function DeveloperModal({ onClose }) {
                    className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="mailto:pradeep@example.com"
+                <a href="https://www.instagram.com/pradeepkumar673atyt/"
                    className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition">
                   <Mail className="w-5 h-5" />
                 </a>
