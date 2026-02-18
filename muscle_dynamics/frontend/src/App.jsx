@@ -244,7 +244,7 @@ function App() {
         </div>
       </section>
 
-      {/* Features Section - One membership for all needs */}
+      {/* Features Section - One website for all needs */}
       <section className="py-20 border-t border-gray-800">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
@@ -298,12 +298,58 @@ function App() {
       </section>
       
       {/* Full-width Banner Image */}
-      <div
-        className="w-full h-64 md:h-96 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/banner.png')" }}
-        aria-label="Promotional banner"
-      ></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/cideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
+        <div className="container mx-auto px-4 py-20 md:py-28 max-w-6xl relative z-10">
+          <div className="text-center">
+            <span className="inline-block px-4 py-1 bg-primary-600/20 text-primary-300 rounded-full text-sm font-semibold mb-6 border border-primary-600/30">
+              joinwithme
+            </span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 bg-clip-text text-transparent">
+                join my journey
+              </span>
+              <br />
+              <span className="text-white">of transformation</span>
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+             its a shame for a man to avoid what his body is capable of<br></br>
+                                                          -pradeepkumar673atyt@instagram.com . #BeBetterEveryDay
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              
+            </div>
+          </div>
+
+          {/* Stats Banner */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-20">
+            {[
+              { label: 'EXERCISES at my DB', value: '1000+' },
+              { label: 'EQUIPMENT', value: '15+' },
+              { label: 'MUSCLE GROUPS', value: '13' },
+              { label: 'included', value: 'tutorial steps' },
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">{stat.value}</div>
+                <div className="text-sm text-gray-400 tracking-wider">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Testimonials Section */}
       <section className="py-20 border-t border-gray-800 bg-gray-900/50">
         <div className="container mx-auto px-4 max-w-6xl">
