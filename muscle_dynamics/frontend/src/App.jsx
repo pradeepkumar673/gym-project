@@ -164,7 +164,8 @@ function App() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="p-2 bg-gradient-to-br from-primary-600 to-primary-400 rounded-lg">
-              <DumbbellIcon className="w-7 h-7 text-white" />
+              {/* === REPLACED DumbbellIcon WITH light.svg === */}
+              <img src="/light.svg" alt="Muscle Dynamics" className="w-7 h-7" />
             </div>
             <div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 bg-clip-text text-transparent">
@@ -545,7 +546,8 @@ function App() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="p-1 bg-primary-600 rounded">
-                  <DumbbellIcon className="w-5 h-5 text-white" />
+                  {/* === REPLACED DumbbellIcon WITH light.svg === */}
+                  <img src="/light.svg" alt="Muscle Dynamics" className="w-5 h-5" />
                 </div>
                 <span className="font-bold text-lg">Muscle Dynamics</span>
               </div>
