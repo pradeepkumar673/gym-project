@@ -170,7 +170,6 @@ function App() {
               <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 bg-clip-text text-transparent">
                 Muscle Dynamics
               </h1>
-              <p className="text-sm text-gray-400">Your AI-Powered Workout Generator</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
@@ -224,19 +223,7 @@ function App() {
               I make group workouts fun and results-driven. #BeBetterEveryDay
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setCurrentStep(1)}
-                className="group bg-primary-600 hover:bg-primary-500 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg shadow-primary-600/25 flex items-center justify-center space-x-2"
-              >
-                <span>Start Your Journey</span>
-                <ChevronRightIcon className="w-5 h-5 group-hover:translate-x-1 transition" />
-              </button>
-              <button
-                onClick={() => setShowDeveloperModal(true)}
-                className="bg-gray-800/80 hover:bg-gray-700 text-white font-semibold py-4 px-8 rounded-full text-lg backdrop-blur-sm border border-gray-700 transition-all"
-              >
-                Meet Your Coach
-              </button>
+              
             </div>
           </div>
 
@@ -269,7 +256,7 @@ function App() {
               <span className="text-white">For All Your Fitness Needs</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-              At Muscle Dynamics, we make workouts fun, nutrition simple, and results inevitable.
+              At Muscle Dynamics, I make workouts fun, nutrition simple, and results inevitable.
             </p>
           </div>
 
@@ -281,8 +268,7 @@ function App() {
               <h3 className="text-2xl font-bold mb-3">Trainer-Led</h3>
               <p className="text-gray-400 mb-4">Expert guidance in every workout, just like a personal coach by your side.</p>
               <div className="text-primary-600 font-semibold flex items-center space-x-1">
-                <span>Learn more</span>
-                <ChevronRightIcon className="w-4 h-4" />
+                
               </div>
             </div>
 
@@ -290,11 +276,10 @@ function App() {
               <div className="w-16 h-16 bg-primary-600/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition">
                 <FlameIcon className="w-8 h-8 text-primary-600" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Nutrition & Wellness</h3>
-              <p className="text-gray-400 mb-4">Healthy eating plans and mental wellness support for holistic fitness.</p>
+              <h3 className="text-2xl font-bold mb-3">1000+ exercises</h3>
+              <p className="text-gray-400 mb-4">stored in my databases.</p>
               <div className="text-primary-600 font-semibold flex items-center space-x-1">
-                <span>Learn more</span>
-                <ChevronRightIcon className="w-4 h-4" />
+               
               </div>
             </div>
 
@@ -305,13 +290,13 @@ function App() {
               <h3 className="text-2xl font-bold mb-3">Personalized</h3>
               <p className="text-gray-400 mb-4">Workouts tailored to your equipment, goals, and target muscles.</p>
               <div className="text-primary-600 font-semibold flex items-center space-x-1">
-                <span>Learn more</span>
-                <ChevronRightIcon className="w-4 h-4" />
+               
               </div>
             </div>
           </div>
         </div>
       </section>
+      
       {/* Full-width Banner Image */}
       <div
         className="w-full h-64 md:h-96 bg-cover bg-center bg-no-repeat"
